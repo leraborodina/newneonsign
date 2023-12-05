@@ -49,7 +49,6 @@ namespace NeonSignWPF.Windows
                 login_txt.Clear();
                 password_txt.Clear();
                 login_txt.Focus();    
-                
             }        
         }
 
