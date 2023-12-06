@@ -6,18 +6,19 @@
         xmlns:local="clr-namespace:NeonSignWPF"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="600" Width="800"
         Background="#EBF7F9">
     <Grid>
         <StackPanel Height="100" VerticalAlignment="Top">
             <TextBlock Width="auto" FontSize="30" Margin="30" Text="Добро пожаловать, админ!"></TextBlock>
         </StackPanel>
-        <StackPanel x:Name="MainPanel" Width="700" Height="350" VerticalAlignment="Bottom" Margin="50,0,50,0">
-            <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Width="700" Height="250"></StackPanel>
+        <StackPanel x:Name="MainPanel" Width="700" Height="480" VerticalAlignment="Bottom" Margin="50,105,50,0">
+            <StackPanel Orientation="Horizontal" Width="700" Height="380"/>
             <StackPanel VerticalAlignment="Bottom" Orientation="Vertical" Width="700" Height="100">
-                <Button x:Name="LogOutButton" Width="200" Height="40" Margin="0,20" Content="Выйти" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Click="LogOut_btn_Click"></Button>
+                <Button x:Name="LogOutButton" Width="200" Height="40" Margin="30" Content="Выйти" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="LogOut_btn_Click"/>
             </StackPanel>
         </StackPanel>
-        <Frame x:Name="AdminFrame" Width="800" Height="450"/>
+        <Frame x:Name="AdminFrame" Width="800" Navigated="AdminFrame_Navigated" Margin="0,0,0,99"/>
     </Grid>
 </Window>
+   

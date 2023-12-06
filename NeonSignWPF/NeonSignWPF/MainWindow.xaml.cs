@@ -1,4 +1,5 @@
-﻿using NeonSignWPF.Windows;
+﻿using NeonSignWPF.Pages;
+using NeonSignWPF.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace NeonSignWPF
         public MainWindow()
         {
             InitializeComponent();
+            AdminFrame.Navigate(new AdminMenuPage());
         }
 
         private void LogOut_btn_Click(object sender, RoutedEventArgs e)
@@ -31,6 +33,11 @@ namespace NeonSignWPF
             LoginWindow loginWindow = new LoginWindow();
             loginWindow.Show();
             this.Close();
+        }
+
+        private void AdminFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+
         }
     }
 }

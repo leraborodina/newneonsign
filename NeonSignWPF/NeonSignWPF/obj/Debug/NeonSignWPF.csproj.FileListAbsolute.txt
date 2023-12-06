@@ -24,3 +24,9 @@ C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\NeonSignWPF.ex
 C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\NeonSignWPF.pdb
 C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Windows\UserMenuWindow.g.cs
 C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Windows\UserMenuWindow.baml
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AdminMenuPage.g.cs
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AdminMenuPage.baml
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AdminUsersTable.g.cs
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AdminUsersTable.baml
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AddUserPage.g.cs
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AddUserPage.baml

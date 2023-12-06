@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\App.xaml
-3752862846
+6-1684530659
 2973112643
-14-926696387
+171852225950
 18-33575039
-MainWindow.xaml;Windows\LoginWindow.xaml;Windows\UserMenuWindow.xaml;
+MainWindow.xaml;Pages\AddUserPage.xaml;Pages\AdminMenuPage.xaml;Pages\AdminUsersTable.xaml;Windows\LoginWindow.xaml;Windows\UserMenuWindow.xaml;
 
 True
 
