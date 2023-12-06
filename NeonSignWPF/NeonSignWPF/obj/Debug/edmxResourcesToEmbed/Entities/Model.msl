@@ -1,24 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Хранилище NeonSignDBModelContainer" CdmEntityContainer="NeonSignDBEntities">
+    <EntitySetMapping Name="NeonColor">
+      <EntityTypeMapping TypeName="NeonSignDBModel.NeonColor">
+        <MappingFragment StoreEntitySet="NeonColor">
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="id_color" ColumnName="id_color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NeonType">
+      <EntityTypeMapping TypeName="NeonSignDBModel.NeonType">
+        <MappingFragment StoreEntitySet="NeonType">
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id_neon_type" ColumnName="id_neon_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="NeonSignDBModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="total_price" ColumnName="total_price" />
+          <ScalarProperty Name="id_form" ColumnName="id_form" />
+          <ScalarProperty Name="id_color" ColumnName="id_color" />
+          <ScalarProperty Name="id_neon_type" ColumnName="id_neon_type" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="id_order" ColumnName="id_order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Roles">
       <EntityTypeMapping TypeName="NeonSignDBModel.Roles">
         <MappingFragment StoreEntitySet="Roles">
-          <ScalarProperty Name="id_role" ColumnName="id_role" />
           <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="id_role" ColumnName="id_role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SignForm">
+      <EntityTypeMapping TypeName="NeonSignDBModel.SignForm">
+        <MappingFragment StoreEntitySet="SignForm">
+          <ScalarProperty Name="form_price" ColumnName="form_price" />
+          <ScalarProperty Name="form_img" ColumnName="form_img" />
+          <ScalarProperty Name="form_name" ColumnName="form_name" />
+          <ScalarProperty Name="id_form" ColumnName="id_form" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="NeonSignDBModel.Users">
         <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="id_user" ColumnName="id_user" />
-          <ScalarProperty Name="login" ColumnName="login" />
-          <ScalarProperty Name="password" ColumnName="password" />
-          <ScalarProperty Name="firstname" ColumnName="firstname" />
-          <ScalarProperty Name="lastname" ColumnName="lastname" />
-          <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="id_role" ColumnName="id_role" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

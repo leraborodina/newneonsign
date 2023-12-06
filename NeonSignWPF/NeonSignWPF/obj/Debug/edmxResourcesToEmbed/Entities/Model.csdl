@@ -1,29 +1,145 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="NeonSignDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="NeonSignDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="NeonColor" EntityType="NeonSignDBModel.NeonColor" />
+    <EntitySet Name="NeonType" EntityType="NeonSignDBModel.NeonType" />
+    <EntitySet Name="Orders" EntityType="NeonSignDBModel.Orders" />
+    <EntitySet Name="Roles" EntityType="NeonSignDBModel.Roles" />
+    <EntitySet Name="SignForm" EntityType="NeonSignDBModel.SignForm" />
+    <EntitySet Name="Users" EntityType="NeonSignDBModel.Users" />
+    <AssociationSet Name="FK_Orders_NeonColor" Association="NeonSignDBModel.FK_Orders_NeonColor">
+      <End Role="NeonColor" EntitySet="NeonColor" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_NeonType" Association="NeonSignDBModel.FK_Orders_NeonType">
+      <End Role="NeonType" EntitySet="NeonType" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_SignForm" Association="NeonSignDBModel.FK_Orders_SignForm">
+      <End Role="SignForm" EntitySet="SignForm" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Users" Association="NeonSignDBModel.FK_Orders_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="NeonSignDBModel.FK_Users_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="NeonColor">
+    <Key>
+      <PropertyRef Name="id_color" />
+    </Key>
+    <Property Name="id_color" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="color" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Orders" Relationship="NeonSignDBModel.FK_Orders_NeonColor" FromRole="NeonColor" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="NeonType">
+    <Key>
+      <PropertyRef Name="id_neon_type" />
+    </Key>
+    <Property Name="id_neon_type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="NeonSignDBModel.FK_Orders_NeonType" FromRole="NeonType" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="id_order" />
+    </Key>
+    <Property Name="id_order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_user" Type="Int32" Nullable="false" />
+    <Property Name="id_neon_type" Type="Int32" Nullable="false" />
+    <Property Name="id_color" Type="Int32" Nullable="false" />
+    <Property Name="id_form" Type="Int32" Nullable="false" />
+    <Property Name="total_price" Type="Int32" />
+    <NavigationProperty Name="NeonColor" Relationship="NeonSignDBModel.FK_Orders_NeonColor" FromRole="Orders" ToRole="NeonColor" />
+    <NavigationProperty Name="NeonType" Relationship="NeonSignDBModel.FK_Orders_NeonType" FromRole="Orders" ToRole="NeonType" />
+    <NavigationProperty Name="SignForm" Relationship="NeonSignDBModel.FK_Orders_SignForm" FromRole="Orders" ToRole="SignForm" />
+    <NavigationProperty Name="Users" Relationship="NeonSignDBModel.FK_Orders_Users" FromRole="Orders" ToRole="Users" />
+  </EntityType>
   <EntityType Name="Roles">
     <Key>
       <PropertyRef Name="id_role" />
     </Key>
     <Property Name="id_role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Users" Relationship="Self.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
+    <Property Name="role" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="NeonSignDBModel.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="SignForm">
+    <Key>
+      <PropertyRef Name="id_form" />
+    </Key>
+    <Property Name="id_form" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="form_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="form_img" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="form_price" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="NeonSignDBModel.FK_Orders_SignForm" FromRole="SignForm" ToRole="Orders" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="id_user" />
     </Key>
     <Property Name="id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="id_role" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Roles" Relationship="Self.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
+    <NavigationProperty Name="Orders" Relationship="NeonSignDBModel.FK_Orders_Users" FromRole="Users" ToRole="Orders" />
+    <NavigationProperty Name="Roles" Relationship="NeonSignDBModel.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
   </EntityType>
+  <Association Name="FK_Orders_NeonColor">
+    <End Type="NeonSignDBModel.NeonColor" Role="NeonColor" Multiplicity="1" />
+    <End Type="NeonSignDBModel.Orders" Role="Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NeonColor">
+        <PropertyRef Name="id_color" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="id_color" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_NeonType">
+    <End Type="NeonSignDBModel.NeonType" Role="NeonType" Multiplicity="1" />
+    <End Type="NeonSignDBModel.Orders" Role="Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NeonType">
+        <PropertyRef Name="id_neon_type" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="id_neon_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_SignForm">
+    <End Type="NeonSignDBModel.SignForm" Role="SignForm" Multiplicity="1" />
+    <End Type="NeonSignDBModel.Orders" Role="Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SignForm">
+        <PropertyRef Name="id_form" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="id_form" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Users">
+    <End Type="NeonSignDBModel.Users" Role="Users" Multiplicity="1" />
+    <End Type="NeonSignDBModel.Orders" Role="Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Users_Roles">
-    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
-    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <End Type="NeonSignDBModel.Roles" Role="Roles" Multiplicity="1" />
+    <End Type="NeonSignDBModel.Users" Role="Users" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Roles">
         <PropertyRef Name="id_role" />
@@ -33,12 +149,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="NeonSignDBEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Roles" EntityType="Self.Roles" />
-    <EntitySet Name="Users" EntityType="Self.Users" />
-    <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
-      <End Role="Roles" EntitySet="Roles" />
-      <End Role="Users" EntitySet="Users" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>

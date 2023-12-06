@@ -15,9 +15,7 @@
                     <GridViewColumn Header="id" Width="117"  DisplayMemberBinding="{Binding id_user}"/>
                     <GridViewColumn Header="login" Width="117" DisplayMemberBinding="{Binding login}" />
                     <GridViewColumn Header="password" Width="117" DisplayMemberBinding="{Binding passowrd}"/>
-                    <GridViewColumn Header="firstname" Width="117" DisplayMemberBinding="{Binding firstname}" />
-                    <GridViewColumn Header="lastname" Width="117" DisplayMemberBinding="{Binding lastname}" />
-                    <GridViewColumn Header="email" Width="117" DisplayMemberBinding="{Binding email}"/>
+                    <GridViewColumn Header="role" Width="117" DisplayMemberBinding="{Binding Roles.role}" />
                 </GridView>
             </ListView.View>
         </ListView>

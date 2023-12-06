@@ -1,11 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Хранилище NeonSignDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="NeonColor">
+    <Key>
+      <PropertyRef Name="id_color" />
+    </Key>
+    <Property Name="id_color" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="color" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NeonType">
+    <Key>
+      <PropertyRef Name="id_neon_type" />
+    </Key>
+    <Property Name="id_neon_type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="id_order" />
+    </Key>
+    <Property Name="id_order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_user" Type="int" Nullable="false" />
+    <Property Name="id_neon_type" Type="int" Nullable="false" />
+    <Property Name="id_color" Type="int" Nullable="false" />
+    <Property Name="id_form" Type="int" Nullable="false" />
+    <Property Name="total_price" Type="int" />
+  </EntityType>
   <EntityType Name="Roles">
     <Key>
       <PropertyRef Name="id_role" />
     </Key>
     <Property Name="id_role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="role" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SignForm">
+    <Key>
+      <PropertyRef Name="id_form" />
+    </Key>
+    <Property Name="id_form" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="form_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="form_img" Type="varbinary(max)" />
+    <Property Name="form_price" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -14,11 +49,56 @@
     <Property Name="id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="firstname" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="lastname" Type="nvarchar" MaxLength="50" />
-    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="id_role" Type="int" Nullable="false" />
   </EntityType>
+  <Association Name="FK_Orders_NeonColor">
+    <End Role="NeonColor" Type="Self.NeonColor" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NeonColor">
+        <PropertyRef Name="id_color" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="id_color" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_NeonType">
+    <End Role="NeonType" Type="Self.NeonType" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NeonType">
+        <PropertyRef Name="id_neon_type" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="id_neon_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_SignForm">
+    <End Role="SignForm" Type="Self.SignForm" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SignForm">
+        <PropertyRef Name="id_form" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="id_form" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Users_Roles">
     <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
     <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -32,8 +112,28 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="Хранилище NeonSignDBModelContainer">
+    <EntitySet Name="NeonColor" EntityType="Self.NeonColor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NeonType" EntityType="Self.NeonType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SignForm" EntityType="Self.SignForm" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Orders_NeonColor" Association="Self.FK_Orders_NeonColor">
+      <End Role="NeonColor" EntitySet="NeonColor" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_NeonType" Association="Self.FK_Orders_NeonType">
+      <End Role="NeonType" EntitySet="NeonType" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_SignForm" Association="Self.FK_Orders_SignForm">
+      <End Role="SignForm" EntitySet="SignForm" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Users" Association="Self.FK_Orders_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
     <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
       <End Role="Roles" EntitySet="Roles" />
       <End Role="Users" EntitySet="Users" />

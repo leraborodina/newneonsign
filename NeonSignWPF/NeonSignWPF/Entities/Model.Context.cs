@@ -25,7 +25,11 @@ namespace NeonSignWPF.Entities
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<NeonColor> NeonColor { get; set; }
+        public virtual DbSet<NeonType> NeonType { get; set; }
+        public virtual DbSet<Orders> Orders { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
+        public virtual DbSet<SignForm> SignForm { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }
 }

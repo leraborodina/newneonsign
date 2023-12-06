@@ -12,21 +12,20 @@ namespace NeonSignWPF.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class SignForm
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Users()
+        public SignForm()
         {
             this.Orders = new HashSet<Orders>();
         }
     
-        public int id_user { get; set; }
-        public string login { get; set; }
-        public string password { get; set; }
-        public int id_role { get; set; }
+        public int id_form { get; set; }
+        public string form_name { get; set; }
+        public byte[] form_img { get; set; }
+        public int form_price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }
-        public virtual Roles Roles { get; set; }
     }
 }
