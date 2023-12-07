@@ -11,22 +11,18 @@
     <Grid>
         <StackPanel Height="280" Width="700" VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,90,0,0">
             <StackPanel Width="350" HorizontalAlignment="Left" Height="280" VerticalAlignment="Top">
-                <TextBlock Margin="15" FontSize="20">Введите логин</TextBlock>
-                <TextBlock Margin="15" FontSize="20">Введите пароль</TextBlock>
-                <TextBlock Margin="15" FontSize="20">Введите имя</TextBlock>
-                <TextBlock Margin="15" FontSize="20">Введите фамилию</TextBlock>
-                <TextBlock Margin="15" FontSize="20">Введите почту</TextBlock>
+                <TextBlock Margin="15" FontSize="35">Введите логин</TextBlock>
+                <TextBlock Margin="15" FontSize="35">Введите пароль</TextBlock>
+                <TextBlock Margin="15" FontSize="35">Выберите роль</TextBlock>
             </StackPanel>
             <StackPanel Width="350" HorizontalAlignment="Right" Height="280" VerticalAlignment="Top">
-                <TextBox x:Name="TextLogin" Margin="15" Height="25" FontSize="15" Foreground="Black"></TextBox>
-                <TextBox x:Name="TextPassword" Margin="15" Height="25" FontSize="15" Foreground="Black"></TextBox>
-                <TextBox x:Name="TextFirstName" Margin="15" Height="25" FontSize="15" Foreground="Black"></TextBox>
-                <TextBox x:Name="TextLastName" Margin="15" Height="25" FontSize="15" Foreground="Black"></TextBox>
-                <TextBox x:Name="TextEmail" Margin="15" Height="25" FontSize="15" Foreground="Black"></TextBox>
+                <TextBox x:Name="TextLogin" Margin="15" Height="45" FontSize="35" Foreground="Black"></TextBox>
+                <PasswordBox x:Name="TextPassword" Margin="15" Height="45" FontSize="35" Foreground="Black"></PasswordBox>
+                <ComboBox x:Name="SelectRoleComboBox" DisplayMemberPath="role" Margin="15" Height="45"></ComboBox>
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="70" Width="700">
-            <Button x:Name="Conf_Button" Content="Сохранить" Margin="10" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Click="Conf_Button_Click"></Button>
+            <Button x:Name="Conf_Button" Content="Сохранить пользователя" Margin="10" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Click="Conf_Button_Click"></Button>
             <Button x:Name="BackButton" Content="Назад" Margin="10" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Click="BackButton_Click"></Button>
         </StackPanel>
     </Grid>

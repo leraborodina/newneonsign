@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:NeonSignWPF.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AdminUsersTable">
+      Title="AdminUsersTable"
+      Loaded="PageLoaded">
 
     <Grid>
         <ListView x:Name="UsersListView" Height="250" Width="700" HorizontalAlignment="Center" Margin="30">

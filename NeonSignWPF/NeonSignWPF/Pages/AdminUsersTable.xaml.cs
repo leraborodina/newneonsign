@@ -25,9 +25,12 @@ namespace NeonSignWPF.Pages
         public AdminUsersTable()
         {
             InitializeComponent();
-            UsersListView.ItemsSource = AppData.db.Users.ToList();
         }
 
+        private void PageLoaded(object sender, RoutedEventArgs e)
+        {
+            UsersListView.ItemsSource = AppData.db.Users.ToList();
+        }
         private void AddUserButton_Click(object sender, RoutedEventArgs e)
         {
            NavigationService.Navigate(new AddUserPage()); 
