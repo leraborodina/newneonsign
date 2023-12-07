@@ -43,12 +43,30 @@ namespace NeonSignWPF.Pages
 
         private void DeleteUserButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var CurrentUser = UsersListView.SelectedItem as Users;
+            bool hasRelatedRecords = CheckForRelatedRecords(CurrentUser);
+            if (hasRelatedRecords)
+            {
+                MessageBox.Show("Невозможно удалить пользователя из-за привязки к другой таблице", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                AppData.db.Users.Remove(CurrentUser);
+                AppData.db.SaveChanges();
+                UsersListView.ItemsSource = AppData.db.Users.ToList();
+                MessageBox.Show("Пользователь успешно удален", "Успешно!", MessageBoxButton.OK);
+            }
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.GoBack();
+        }
 
+        private bool CheckForRelatedRecords(Users users)//поиск привязки пользователя к другой таблице(в данном случае Orders)
+        {
+            bool hasRelatedRecords = AppData.db.Orders.Any(u => u.id_user == users.id_user);
+            return hasRelatedRecords;
         }
     }
 }
