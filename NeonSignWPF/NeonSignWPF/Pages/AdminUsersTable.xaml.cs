@@ -36,10 +36,10 @@ namespace NeonSignWPF.Pages
            NavigationService.Navigate(new AddUserPage()); 
         }
 
-        private void EditUserButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        //private void EditUserButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    //NavigationService.Navigate(new EditUserPage((sender as Button).DataContext as Users));
+        //}
 
         private void DeleteUserButton_Click(object sender, RoutedEventArgs e)
         {
@@ -63,10 +63,15 @@ namespace NeonSignWPF.Pages
             NavigationService.GoBack();
         }
 
-        private bool CheckForRelatedRecords(Users users)//поиск привязки пользователя к другой таблице(в данном случае Orders)
+        private bool CheckForRelatedRecords(Users users)//поиск привязки пользователя к таблице Orders
         {
             bool hasRelatedRecords = AppData.db.Orders.Any(u => u.id_user == users.id_user);
             return hasRelatedRecords;
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationService.Navigate(new AddUserPage((sender as Button).DataContext as Users));
         }
     }
 }

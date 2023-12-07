@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Linq;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,22 +26,23 @@ namespace NeonSignWPF.Pages
         public AddUserPage()
         {
             InitializeComponent();
-            SelectRoleComboBox.ItemsSource = AppData.db.Roles.ToList();
+            SelectRoleComboBox.ItemsSource = AppData.db.Roles.ToList();          
         }
 
         private void Conf_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (SelectRoleComboBox.SelectedItem == null || TextLogin.Text == "" || TextPassword.Password == "")
+            StringBuilder errors = new StringBuilder();
+            string password = TextPassword.Password;
+            if (SelectRoleComboBox.SelectedItem == null || TextLogin.Text == "" || TextPassword.Password == "")            
+                errors.AppendLine("Заполните пустые поля");            
+            if (password.Length < 5)           
+                errors.AppendLine("Пароль должен содержать не менее 5 символов");          
+            if (AppData.db.Users.Count(u => u.login == TextLogin.Text) > 0)
+                errors.AppendLine("Пользователь с таким логином уже существует.");
+            if (errors.Length > 0)
             {
-                MessageBox.Show("Заполните пустые поля", "Пустые поля!", MessageBoxButton.OK);
-            }
-            else if (!CheckPass())
-            {
-                MessageBox.Show("Пароль должен содержать не менее 5 символов", "Измените пароль!");
-            }
-            else if (AppData.db.Users.Count(u => u.login == TextLogin.Text) > 0)
-            {
-                MessageBox.Show("Пользователь с таким логином уже существует.\nПридумайте новый", "", MessageBoxButton.OK);
+                MessageBox.Show(errors.ToString());
+                return;
             }
             else
             {
@@ -56,20 +58,8 @@ namespace NeonSignWPF.Pages
                 SelectRoleComboBox = null;
                 TextLogin.Focus();
                 MessageBox.Show("Пользователь успешно сохранен!");
-
             }
-        }
 
-        public Boolean CheckPass()
-        {
-            string password = TextPassword.Password;
-            if(password.Length >= 5)
-            {
-                return true;
-            } else 
-            { 
-                return false; 
-            }
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

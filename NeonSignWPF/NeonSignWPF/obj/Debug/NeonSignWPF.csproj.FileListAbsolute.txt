@@ -30,3 +30,5 @@ C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AdminUse
 C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AdminUsersTable.baml
 C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AddUserPage.g.cs
 C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AddUserPage.baml
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\EditUserPage.g.cs
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\EditUserPage.baml

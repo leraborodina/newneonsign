@@ -17,12 +17,19 @@
                     <GridViewColumn Header="login" Width="117" DisplayMemberBinding="{Binding login}" />
                     <GridViewColumn Header="password" Width="117" DisplayMemberBinding="{Binding passowrd}"/>
                     <GridViewColumn Header="role" Width="117" DisplayMemberBinding="{Binding Roles.role}" />
+                    <GridViewColumn Width="auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Редактировать" Height="auto" Width="auto" Click="EditButton_Click"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
         <StackPanel x:Name="Footer" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="700" Height="60" Margin="20">
             <Button x:Name="AddUserButton" Width="160" Height="40" Margin="8,8" Content="Добавить пользователя" Click="AddUserButton_Click"/>
-                <Button x:Name="EditUserButton" Width="160" Height="40" Margin="8" Content="Изменить пользователя" Click="EditUserButton_Click"/>
+                <!--<Button x:Name="EditUserButton" Width="160" Height="40" Margin="8" Content="Изменить пользователя" Click="EditUserButton_Click"/>-->
                 <Button x:Name="DeleteUserButton" Width="160" Height="40" Margin="8" Content="Удалить пользователя" Click="DeleteUserButton_Click"/>
             <Button x:Name="BackButton" Width="160" Height="40" Margin="8" Content="Назад" Click="BackButton_Click"/>
         </StackPanel>
