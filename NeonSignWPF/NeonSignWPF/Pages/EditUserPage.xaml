@@ -15,9 +15,9 @@
                 <TextBlock Margin="15" FontSize="35">Роль</TextBlock>
             </StackPanel>
             <StackPanel Width="350" HorizontalAlignment="Right" Height="280" VerticalAlignment="Top">
-                <TextBox x:Name="TextLogin" Margin="15" Height="45" FontSize="35" Foreground="Black" Text="{Binding Users.login}"></TextBox>
+                <TextBox x:Name="TextLogin" Margin="15" Height="45" FontSize="35" Foreground="Black"></TextBox>
                 <PasswordBox x:Name="TextPassword" Margin="15" Height="45" FontSize="35" Foreground="Black"></PasswordBox>
-                <ComboBox x:Name="SelectRoleComboBox" DisplayMemberPath="role" Margin="15" Height="45" SelectedItem="{Binding Roles.role}"></ComboBox>
+                <ComboBox x:Name="SelectRoleComboBox" DisplayMemberPath="role" Margin="15" Height="45" SelectedItem="{Binding Roles}"></ComboBox>
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="70" Width="700">

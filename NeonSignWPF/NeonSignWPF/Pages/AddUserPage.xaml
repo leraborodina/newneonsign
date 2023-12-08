@@ -16,9 +16,9 @@
                 <TextBlock Margin="15" FontSize="35">Выберите роль</TextBlock>
             </StackPanel>
             <StackPanel Width="350" HorizontalAlignment="Right" Height="280" VerticalAlignment="Top">
-                <TextBox x:Name="TextLogin" Margin="15" Height="45" FontSize="35" Foreground="Black" Text="{Binding login}"></TextBox>
+                <TextBox Text="{Binding login}" x:Name="TextLogin" Margin="15" Height="45" FontSize="35" Foreground="Black"></TextBox>
                 <PasswordBox x:Name="TextPassword" Margin="15" Height="45" FontSize="35" Foreground="Black"></PasswordBox>
-                <ComboBox x:Name="SelectRoleComboBox" DisplayMemberPath="role" Margin="15" Height="45" SelectedItem="{Binding Roles}"></ComboBox>
+                <ComboBox SelectedItem="{Binding Roles}" x:Name="SelectRoleComboBox" DisplayMemberPath="role" Margin="15" Height="45"></ComboBox>
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="70" Width="700">

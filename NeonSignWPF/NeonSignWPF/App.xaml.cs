@@ -14,6 +14,6 @@ namespace NeonSignWPF
     public partial class App : Application
     {
         public static string UserLogin {  get; set; }
-        public static string IdUser { get; set; }
+        public static int IdUser { get; set; }
     }
 }

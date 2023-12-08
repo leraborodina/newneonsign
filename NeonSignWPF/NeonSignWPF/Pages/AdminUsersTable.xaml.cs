@@ -21,7 +21,6 @@ namespace NeonSignWPF.Pages
     /// </summary>
     public partial class AdminUsersTable : Page
     {
-        Users users = new Users();
         public AdminUsersTable()
         {
             InitializeComponent();
@@ -36,11 +35,10 @@ namespace NeonSignWPF.Pages
            NavigationService.Navigate(new AddUserPage()); 
         }
 
-        //private void EditUserButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    //NavigationService.Navigate(new EditUserPage((sender as Button).DataContext as Users));
-        //}
-
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new EditUserPage((sender as Button).DataContext as Users));
+        }
         private void DeleteUserButton_Click(object sender, RoutedEventArgs e)
         {
             var CurrentUser = UsersListView.SelectedItem as Users;
@@ -69,9 +67,5 @@ namespace NeonSignWPF.Pages
             return hasRelatedRecords;
         }
 
-        private void EditButton_Click(object sender, RoutedEventArgs e)
-        {
-            //NavigationService.Navigate(new AddUserPage((sender as Button).DataContext as Users));
-        }
     }
 }

@@ -26,7 +26,8 @@ namespace NeonSignWPF.Pages
         public AddUserPage()
         {
             InitializeComponent();
-            SelectRoleComboBox.ItemsSource = AppData.db.Roles.ToList();          
+
+            SelectRoleComboBox.ItemsSource = AppData.db.Roles.ToList();
         }
 
         private void Conf_Button_Click(object sender, RoutedEventArgs e)
