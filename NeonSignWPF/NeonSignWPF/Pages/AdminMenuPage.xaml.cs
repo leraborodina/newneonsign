@@ -25,29 +25,19 @@ namespace NeonSignWPF.Pages
             InitializeComponent();
         }
 
-        private void NeonType_Click(object sender, RoutedEventArgs e)
+        private void Users_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AdminUsersTable());
         }
 
-        private void NeonColor_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void SignForm_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Orders_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new AdminOrdersTablePage());
         }
 
         private void Roles_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new AdminRolesTablePage());
         }
     }
 }

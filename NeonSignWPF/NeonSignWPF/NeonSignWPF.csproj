@@ -99,11 +99,20 @@
     <Compile Include="Entities\Users.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AddRolePage.xaml.cs">
+      <DependentUpon>AddRolePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddUserPage.xaml.cs">
       <DependentUpon>AddUserPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AdminMenuPage.xaml.cs">
       <DependentUpon>AdminMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminOrdersTablePage.xaml.cs">
+      <DependentUpon>AdminOrdersTablePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminRolesTablePage.xaml.cs">
+      <DependentUpon>AdminRolesTablePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AdminUsersTable.xaml.cs">
       <DependentUpon>AdminUsersTable.xaml</DependentUpon>
@@ -129,11 +138,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AddRolePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddUserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AdminMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AdminOrdersTablePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AdminRolesTablePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -24,7 +24,7 @@
                 </Grid.RowDefinitions>
                 <Button x:Name="Orders" Grid.Row="0"  Width="250" Height="60"  Grid.Column="1" Content="Заказы" Click="Orders_Click"/>
                 <Button x:Name="Roles" Grid.Row="1"  Width="250" Height="60"  Grid.Column="1" Content="Роли" Click="Roles_Click"/>
-                <Button x:Name="Users" Grid.Row="2"  Width="250" Height="60"  Grid.Column="1" Content="пользователи" Click="NeonType_Click"/>
+                <Button x:Name="Users" Grid.Row="2"  Width="250" Height="60"  Grid.Column="1" Content="пользователи" Click="Users_Click"/>
             </Grid>
         </StackPanel>
     </Grid>

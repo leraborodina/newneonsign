@@ -32,3 +32,9 @@ C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AddUserP
 C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AddUserPage.baml
 C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\EditUserPage.g.cs
 C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\EditUserPage.baml
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AdminOrdersTablePage.g.cs
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AdminRolesTablePage.g.cs
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AdminOrdersTablePage.baml
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AdminRolesTablePage.baml
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AddRolePage.g.cs
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\obj\Debug\Pages\AddRolePage.baml
