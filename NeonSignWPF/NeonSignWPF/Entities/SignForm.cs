@@ -19,11 +19,10 @@ namespace NeonSignWPF.Entities
         {
             this.Orders = new HashSet<Orders>();
         }
-    
+
         public int id_form { get; set; }
         public string form_name { get; set; }
         public byte[] form_img { get; set; }
-        public int form_price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }

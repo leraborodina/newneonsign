@@ -22,7 +22,6 @@ namespace NeonSignWPF.Entities
     
         public int id_neon_type { get; set; }
         public string type { get; set; }
-        public int price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }

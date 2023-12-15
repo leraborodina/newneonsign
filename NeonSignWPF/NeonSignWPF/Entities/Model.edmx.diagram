@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="957571d2dffb41a59b2f5006fb729db3" Name="Diagram1">
-        <EntityTypeShape EntityType="NeonSignDBModel.NeonColor" Width="1.5" PointX="3" PointY="10.5" />
-        <EntityTypeShape EntityType="NeonSignDBModel.NeonType" Width="1.5" PointX="3" PointY="7.875" />
+      <Diagram DiagramId="957571d2dffb41a59b2f5006fb729db3" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="NeonSignDBModel.NeonColor" Width="1.5" PointX="3" PointY="4.625" />
+        <EntityTypeShape EntityType="NeonSignDBModel.NeonType" Width="1.5" PointX="3" PointY="7" />
         <EntityTypeShape EntityType="NeonSignDBModel.Orders" Width="1.5" PointX="5.25" PointY="1" />
-        <EntityTypeShape EntityType="NeonSignDBModel.Roles" Width="1.5" PointX="0.75" PointY="1.625" />
-        <EntityTypeShape EntityType="NeonSignDBModel.SignForm" Width="1.5" PointX="3" PointY="5.125" />
-        <EntityTypeShape EntityType="NeonSignDBModel.Users" Width="1.5" PointX="3" PointY="1.375" />
+        <EntityTypeShape EntityType="NeonSignDBModel.Roles" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="NeonSignDBModel.SignForm" Width="1.5" PointX="3" PointY="9.375" />
+        <EntityTypeShape EntityType="NeonSignDBModel.Users" Width="1.5" PointX="3" PointY="1.25" />
         <AssociationConnector Association="NeonSignDBModel.FK_Orders_NeonColor" />
         <AssociationConnector Association="NeonSignDBModel.FK_Orders_NeonType" />
         <AssociationConnector Association="NeonSignDBModel.FK_Orders_SignForm" />

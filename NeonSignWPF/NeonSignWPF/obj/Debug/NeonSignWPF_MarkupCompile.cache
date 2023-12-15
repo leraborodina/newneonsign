@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\valer\Desktop\neonsign\NeonSignWPF\NeonSignWPF\App.xaml
-10860327273
+13-2107108475
 2973112643
-241002450985
+27-285561395
 19-1559281696
-MainWindow.xaml;Pages\AddRolePage.xaml;Pages\AddUserPage.xaml;Pages\AdminMenuPage.xaml;Pages\AdminOrdersTablePage.xaml;Pages\AdminRolesTablePage.xaml;Pages\AdminUsersTable.xaml;Pages\EditUserPage.xaml;Windows\LoginWindow.xaml;Windows\UserMenuWindow.xaml;
+MainWindow.xaml;Pages\AddEditOrderPage.xaml;Pages\AddRolePage.xaml;Pages\AddUserPage.xaml;Pages\AdminMenuPage.xaml;Pages\AdminOrdersTablePage.xaml;Pages\AdminRolesTablePage.xaml;Pages\AdminSignFormPage.xaml;Pages\AdminUsersTable.xaml;Pages\EditUserPage.xaml;Pages\UserOrdersPage.xaml;Windows\LoginWindow.xaml;Windows\UserMenuWindow.xaml;
 
 False
 

@@ -6,9 +6,31 @@
       xmlns:local="clr-namespace:NeonSignWPF.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AdminOrdersTablePage">
+      Title="AdminOrdersTablePage"
+      Loaded="PageLoaded">
 
     <Grid>
-        
+        <ListView x:Name="OrdersListView" Height="250" Width="700" HorizontalAlignment="Center" Margin="30">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="id_order" Width="auto"  DisplayMemberBinding="{Binding id_order}"/>
+                    <GridViewColumn Header="sign_form" Width="auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image x:Name="image_photo" HorizontalAlignment="Center" Source="{Binding SignForm.form_img, TargetNullValue=Resources\no_image.jpg}" Width="100" Height="100" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="id_user" Width="auto" DisplayMemberBinding="{Binding id_user}" />
+                    <GridViewColumn Header="id_neon_type" Width="auto" DisplayMemberBinding="{Binding id_neon_type}"/>
+                    <GridViewColumn Header="id_color" Width="auto" DisplayMemberBinding="{Binding id_color}" />
+                    <GridViewColumn Header="id_form" Width="auto" DisplayMemberBinding="{Binding id_form}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel x:Name="Footer" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="700" Height="60" Margin="20">
+            <Button x:Name="DeleteButton" Width="160" Height="40" Margin="8,8" Content="Удалить заказ" Click="DeleteOrder"/>
+            <Button x:Name="BackButton" Width="160" Height="40" Margin="8" Content="Назад" Click="BackButton_Click"/>
+        </StackPanel>
     </Grid>
 </Page>

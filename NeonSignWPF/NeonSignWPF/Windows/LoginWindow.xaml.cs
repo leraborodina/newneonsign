@@ -37,6 +37,8 @@ namespace NeonSignWPF.Windows
                 this.Close();
             } else if (CurrentUser != null)//если пользователь - окно меню со страницей пользователя
             {
+                int userId = CurrentUser.id_user;
+                App.IdUser = userId;
                 UserMenuWindow userMenuWindow = new UserMenuWindow();
                 userMenuWindow.Show();
                 this.Close();

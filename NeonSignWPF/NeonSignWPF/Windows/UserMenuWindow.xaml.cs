@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NeonSignWPF.Entities;
+using NeonSignWPF.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,14 @@ namespace NeonSignWPF.Windows
         public UserMenuWindow()
         {
             InitializeComponent();
+            UserFrame.Navigate(new UserOrdersPage());
+        }
+
+        private void LogOut_btn_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
         }
     }
 }

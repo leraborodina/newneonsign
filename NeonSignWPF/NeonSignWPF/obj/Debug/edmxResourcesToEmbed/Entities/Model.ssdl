@@ -13,7 +13,6 @@
     </Key>
     <Property Name="id_neon_type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="price" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Orders">
     <Key>
@@ -24,7 +23,6 @@
     <Property Name="id_neon_type" Type="int" Nullable="false" />
     <Property Name="id_color" Type="int" Nullable="false" />
     <Property Name="id_form" Type="int" Nullable="false" />
-    <Property Name="total_price" Type="int" />
   </EntityType>
   <EntityType Name="Roles">
     <Key>
@@ -38,9 +36,8 @@
       <PropertyRef Name="id_form" />
     </Key>
     <Property Name="id_form" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="form_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="form_name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="form_img" Type="varbinary(max)" />
-    <Property Name="form_price" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>

@@ -18,7 +18,6 @@
           </Key>
           <Property Name="id_neon_type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="price" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
@@ -29,7 +28,6 @@
           <Property Name="id_neon_type" Type="int" Nullable="false" />
           <Property Name="id_color" Type="int" Nullable="false" />
           <Property Name="id_form" Type="int" Nullable="false" />
-          <Property Name="total_price" Type="int" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -43,9 +41,8 @@
             <PropertyRef Name="id_form" />
           </Key>
           <Property Name="id_form" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="form_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="form_name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="form_img" Type="varbinary(max)" />
-          <Property Name="form_price" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -190,7 +187,6 @@
           </Key>
           <Property Name="id_neon_type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="price" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Orders" Relationship="NeonSignDBModel.FK_Orders_NeonType" FromRole="NeonType" ToRole="Orders" />
         </EntityType>
         <EntityType Name="Orders">
@@ -202,7 +198,6 @@
           <Property Name="id_neon_type" Type="Int32" Nullable="false" />
           <Property Name="id_color" Type="Int32" Nullable="false" />
           <Property Name="id_form" Type="Int32" Nullable="false" />
-          <Property Name="total_price" Type="Int32" />
           <NavigationProperty Name="NeonColor" Relationship="NeonSignDBModel.FK_Orders_NeonColor" FromRole="Orders" ToRole="NeonColor" />
           <NavigationProperty Name="NeonType" Relationship="NeonSignDBModel.FK_Orders_NeonType" FromRole="Orders" ToRole="NeonType" />
           <NavigationProperty Name="SignForm" Relationship="NeonSignDBModel.FK_Orders_SignForm" FromRole="Orders" ToRole="SignForm" />
@@ -221,9 +216,8 @@
             <PropertyRef Name="id_form" />
           </Key>
           <Property Name="id_form" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="form_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="form_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="form_img" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="form_price" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Orders" Relationship="NeonSignDBModel.FK_Orders_SignForm" FromRole="SignForm" ToRole="Orders" />
         </EntityType>
         <EntityType Name="Users">
@@ -297,7 +291,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -314,7 +308,6 @@
           <EntitySetMapping Name="NeonType">
             <EntityTypeMapping TypeName="NeonSignDBModel.NeonType">
               <MappingFragment StoreEntitySet="NeonType">
-                <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="type" ColumnName="type" />
                 <ScalarProperty Name="id_neon_type" ColumnName="id_neon_type" />
               </MappingFragment>
@@ -323,7 +316,6 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="NeonSignDBModel.Orders">
               <MappingFragment StoreEntitySet="Orders">
-                <ScalarProperty Name="total_price" ColumnName="total_price" />
                 <ScalarProperty Name="id_form" ColumnName="id_form" />
                 <ScalarProperty Name="id_color" ColumnName="id_color" />
                 <ScalarProperty Name="id_neon_type" ColumnName="id_neon_type" />
@@ -343,7 +335,6 @@
           <EntitySetMapping Name="SignForm">
             <EntityTypeMapping TypeName="NeonSignDBModel.SignForm">
               <MappingFragment StoreEntitySet="SignForm">
-                <ScalarProperty Name="form_price" ColumnName="form_price" />
                 <ScalarProperty Name="form_img" ColumnName="form_img" />
                 <ScalarProperty Name="form_name" ColumnName="form_name" />
                 <ScalarProperty Name="id_form" ColumnName="id_form" />

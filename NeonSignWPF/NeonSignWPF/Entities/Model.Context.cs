@@ -15,20 +15,9 @@ namespace NeonSignWPF.Entities
     
     public partial class NeonSignDBEntities : DbContext
     {
-        private static NeonSignDBEntities _context;
-        
         public NeonSignDBEntities()
             : base("name=NeonSignDBEntities")
         {
-        }
-
-        public static NeonSignDBEntities GetContext()
-        {
-            if(_context == null)
-            {
-                _context = new NeonSignDBEntities();
-            }
-            return _context;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

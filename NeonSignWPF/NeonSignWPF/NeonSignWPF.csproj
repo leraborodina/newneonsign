@@ -99,6 +99,9 @@
     <Compile Include="Entities\Users.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AddEditOrderPage.xaml.cs">
+      <DependentUpon>AddEditOrderPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddRolePage.xaml.cs">
       <DependentUpon>AddRolePage.xaml</DependentUpon>
     </Compile>
@@ -114,11 +117,17 @@
     <Compile Include="Pages\AdminRolesTablePage.xaml.cs">
       <DependentUpon>AdminRolesTablePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AdminSignFormPage.xaml.cs">
+      <DependentUpon>AdminSignFormPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AdminUsersTable.xaml.cs">
       <DependentUpon>AdminUsersTable.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\EditUserPage.xaml.cs">
       <DependentUpon>EditUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserOrdersPage.xaml.cs">
+      <DependentUpon>UserOrdersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
@@ -138,6 +147,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AddEditOrderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddRolePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -158,11 +171,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AdminSignFormPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AdminUsersTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\EditUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UserOrdersPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

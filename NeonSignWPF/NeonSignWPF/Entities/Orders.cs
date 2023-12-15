@@ -19,7 +19,6 @@ namespace NeonSignWPF.Entities
         public int id_neon_type { get; set; }
         public int id_color { get; set; }
         public int id_form { get; set; }
-        public Nullable<int> total_price { get; set; }
     
         public virtual NeonColor NeonColor { get; set; }
         public virtual NeonType NeonType { get; set; }

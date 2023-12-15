@@ -39,5 +39,10 @@ namespace NeonSignWPF.Pages
         {
             NavigationService.Navigate(new AdminRolesTablePage());
         }
+
+        private void SignForm_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AdminSignFormPage());
+        }
     }
 }

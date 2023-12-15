@@ -42,7 +42,6 @@
     </Key>
     <Property Name="id_neon_type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="price" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Orders" Relationship="NeonSignDBModel.FK_Orders_NeonType" FromRole="NeonType" ToRole="Orders" />
   </EntityType>
   <EntityType Name="Orders">
@@ -54,7 +53,6 @@
     <Property Name="id_neon_type" Type="Int32" Nullable="false" />
     <Property Name="id_color" Type="Int32" Nullable="false" />
     <Property Name="id_form" Type="Int32" Nullable="false" />
-    <Property Name="total_price" Type="Int32" />
     <NavigationProperty Name="NeonColor" Relationship="NeonSignDBModel.FK_Orders_NeonColor" FromRole="Orders" ToRole="NeonColor" />
     <NavigationProperty Name="NeonType" Relationship="NeonSignDBModel.FK_Orders_NeonType" FromRole="Orders" ToRole="NeonType" />
     <NavigationProperty Name="SignForm" Relationship="NeonSignDBModel.FK_Orders_SignForm" FromRole="Orders" ToRole="SignForm" />
@@ -73,9 +71,8 @@
       <PropertyRef Name="id_form" />
     </Key>
     <Property Name="id_form" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="form_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="form_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="form_img" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="form_price" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Orders" Relationship="NeonSignDBModel.FK_Orders_SignForm" FromRole="SignForm" ToRole="Orders" />
   </EntityType>
   <EntityType Name="Users">

@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NeonSignWPF.Windows"
         mc:Ignorable="d"
-        Title="UserMenuWindow" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Background="#EBF7F9"
+        Title="UserMenuWindow" Height="600" Width="800"
+        >
     <Grid>
-        
+        <StackPanel Orientation="Vertical">
+            <StackPanel Height="60" x:Name="WelcomePanel">
+                <TextBlock FontSize="30" Margin="10" Text="Добро пожаловать, пользователь!"></TextBlock>
+            </StackPanel>
+            <StackPanel x:Name="MainPanel" Height="420">
+                <Frame x:Name="UserFrame" Height="420"/>
+            </StackPanel>
+            <StackPanel Height="80">
+                <Button x:Name="LogOutButton" Width="200" Height="40" Margin="20" Content="Выйти" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Click="LogOut_btn_Click"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
