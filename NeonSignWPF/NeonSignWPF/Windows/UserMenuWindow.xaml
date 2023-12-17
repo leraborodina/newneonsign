@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Background="#EBF7F9"
-        Title="UserMenuWindow" Height="600" Width="800"
+        Title="UserMenuWindow" MinHeight="600" MinWidth="800"
+        MaxHeight="600" MaxWidth="800"
         >
     <Grid>
         <StackPanel Orientation="Vertical">
@@ -15,10 +16,10 @@
                 <TextBlock FontSize="30" Margin="10" Text="Добро пожаловать, пользователь!"></TextBlock>
             </StackPanel>
             <StackPanel x:Name="MainPanel" Height="420">
-                <Frame x:Name="UserFrame" Height="420"/>
+                <Frame x:Name="UserFrame" NavigationUIVisibility="Hidden" Height="420" Width="800"/>
             </StackPanel>
-            <StackPanel Height="80">
-                <Button x:Name="LogOutButton" Width="200" Height="40" Margin="20" Content="Выйти" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Click="LogOut_btn_Click"/>
+            <StackPanel Height="80" HorizontalAlignment="Center" Width="800" Orientation="Horizontal">
+                <Button x:Name="LogOutButton" Width="160" Height="40" Background="#FFCDA7DB" FontFamily="OpenSans" FontWeight="Bold" FontSize="15" Foreground="white" BorderThickness="0" Margin="20,0,0,0" Content="Выйти" VerticalAlignment="Center" HorizontalAlignment="Left" Click="LogOut_btn_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

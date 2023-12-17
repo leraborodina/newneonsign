@@ -41,18 +41,21 @@ namespace NeonSignWPF.Pages
         }
         private void DeleteUserButton_Click(object sender, RoutedEventArgs e)
         {
-            var CurrentUser = UsersListView.SelectedItem as Users;
-            bool hasRelatedRecords = CheckForRelatedRecords(CurrentUser);
-            if (hasRelatedRecords)
+            if (MessageBox.Show("Вы действительно хотите удалить пользователя?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                MessageBox.Show("Невозможно удалить пользователя из-за привязки к другой таблице", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else
-            {
-                AppData.db.Users.Remove(CurrentUser);
-                AppData.db.SaveChanges();
-                UsersListView.ItemsSource = AppData.db.Users.ToList();
-                MessageBox.Show("Пользователь успешно удален", "Успешно!", MessageBoxButton.OK);
+                var CurrentUser = UsersListView.SelectedItem as Users;
+                bool hasRelatedRecords = CheckForRelatedRecords(CurrentUser);
+                if (hasRelatedRecords)
+                {
+                    MessageBox.Show("Невозможно удалить пользователя из-за привязки к другой таблице", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    AppData.db.Users.Remove(CurrentUser);
+                    AppData.db.SaveChanges();
+                    UsersListView.ItemsSource = AppData.db.Users.ToList();
+                    MessageBox.Show("Пользователь успешно удален", "Успешно!", MessageBoxButton.OK);
+                }
             }
         }
 

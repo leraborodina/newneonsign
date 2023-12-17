@@ -20,7 +20,7 @@
                     <ComboBox x:Name="SelectColorCMB" SelectedItem="{Binding NeonColor}" Width="150" Height="21" DisplayMemberPath="color" HorizontalAlignment="Right"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="5, 20, 10, 5">
-                    <TextBlock Width="175" Height="21" HorizontalAlignment="Left" Text="Выберите цвет вывески" Foreground="#6B7F83" FontSize="12"/>
+                    <TextBlock Width="175" Height="21" HorizontalAlignment="Left" Text="Выберите форму вывески" Foreground="#6B7F83" FontSize="12"/>
                     <ComboBox x:Name="SelectFormCMB" SelectedItem="{Binding SignForm}" Width="150" Height="21" DisplayMemberPath="form_name" HorizontalAlignment="Right"/>
                 </StackPanel>
             </StackPanel>
