@@ -23,7 +23,7 @@
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
                 <TextBlock FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Поиск: " Grid.Column="0" Grid.Row="0"></TextBlock>
-                <TextBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Grid.Column="1" Grid.Row="0" TextChanged="TextSearch_TextChanged"/>
+                <TextBox x:Name="Txt_search" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Grid.Column="1" Grid.Row="0" TextChanged="TextSearch_TextChanged"/>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Grid.Column="2" Grid.Row="0" Text="Выберите форму: "></TextBlock>
                 <ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Grid.Column="3" Grid.Row="0" x:Name="CMBForm" DisplayMemberPath="form_name" SelectionChanged="ComboBox_SelectionChanged"/>
             </Grid>

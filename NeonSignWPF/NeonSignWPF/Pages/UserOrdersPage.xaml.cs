@@ -24,39 +24,42 @@ namespace NeonSignWPF.Pages
         public UserOrdersPage()
         {
             InitializeComponent();
-            var allSigns = AppData.db.SignForm.ToList();
-
-            allSigns.Insert(0, new SignForm
-            {
-                form_name = "Все формы"
-            });
-
-            CMBForm.ItemsSource = allSigns;
-            CMBForm.SelectedIndex = 0;
+            int userId = App.IdUser;
+            var currentOrders = AppData.db.Orders.Where(o => o.id_user == userId).ToList();
         }
 
         private void UpdateOrders()
         {
-            //int userId = App.IdUser;
-            //var currentOrder = AppData.db.Orders.Where(u => u.id_user == userId).ToList();
+            // Получаем заказы для текущего пользователя
+            int userId = App.IdUser;
+            var currentOrders = AppData.db.Orders.Where(o => o.id_user == userId).ToList();
 
-            //if (CMBForm.SelectedIndex > 0)
-            //{
-            //    // Получаем выбранную форму из ComboBox
-            //    var selectedForm = CMBForm.SelectedItem as SignForm;
+            if (CMBForm.SelectedIndex > 0)
+            {
+                var selectedForm = CMBForm.SelectedItem as SignForm;
+                currentOrders = currentOrders.Where(o => o.SignForm.form_name == selectedForm.form_name).ToList();
+            }
 
-            //    // Фильтруем заказы на основе выбранной формы
-            //    currentOrder = currentOrder.Where(o => o.SignForm.form_name.Contains(selectedForm.form_name)).ToList();
-            //    currentOrder = currentOrder.Where(o => o.NeonColor.color.ToLower().Contains(selectedForm.form_name.ToLower())).ToList();
-            //    OrdersListView.ItemsSource = currentOrder;
-            //}
-
+            string searchText = Txt_search.Text.Trim().ToLower();
+            currentOrders = currentOrders.Where(o =>
+                o.NeonColor.color.ToLower().Contains(searchText) ||
+                o.NeonType.type.ToLower().Contains(searchText)).ToList();
+            OrdersListView.ItemsSource = currentOrders;
         }
 
         private void PageLoaded(object sender, RoutedEventArgs e)
         {
             int userId = App.IdUser;
             OrdersListView.ItemsSource = AppData.db.Orders.Where(u => u.id_user == userId).ToList();
+            var allForms = AppData.db.SignForm.OrderBy(f => f.form_name).ToList();
+
+            // Добавляем "Все формы" в начало списка
+            allForms.Insert(0, new SignForm { form_name = "Все формы" });
+
+            // Заполняем ComboBox формами
+            CMBForm.ItemsSource = allForms;
+            CMBForm.DisplayMemberPath = "form_name"; // Указываем свойство для отображения в ComboBox
+            CMBForm.SelectedIndex = 0;
         }
 
         private void AddOrderButton_Click(object sender, RoutedEventArgs e)
@@ -71,12 +74,12 @@ namespace NeonSignWPF.Pages
 
         private void TextSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-           // UpdateOrders();
+           UpdateOrders();
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //UpdateOrders();
+            UpdateOrders();
         }
     }
 }
