@@ -5,32 +5,32 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:NeonSignWPF.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="380" d:DesignWidth="800"
       Title="AdminUsersTable"
       Loaded="PageLoaded">
 
-    <Grid>
-        <ListView x:Name="UsersListView" Height="250" Width="700" HorizontalAlignment="Center" Margin="30">
+    <Grid Width="800" Height="380">
+        <ListView x:Name="UsersListView" Height="300" Width="700" HorizontalAlignment="Center" VerticalAlignment="Top">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="id" Width="117"  DisplayMemberBinding="{Binding id_user}"/>
-                    <GridViewColumn Header="login" Width="117" DisplayMemberBinding="{Binding login}" />
-                    <GridViewColumn Header="password" Width="117" DisplayMemberBinding="{Binding passowrd}"/>
-                    <GridViewColumn Header="role" Width="117" DisplayMemberBinding="{Binding Roles.role}" />
+                    <GridViewColumn Header="id" Width="140"  DisplayMemberBinding="{Binding id_user}"/>
+                    <GridViewColumn Header="login" Width="140" DisplayMemberBinding="{Binding login}" />
+                    <GridViewColumn Header="password" Width="140" DisplayMemberBinding="{Binding passowrd}"/>
+                    <GridViewColumn Header="role" Width="140" DisplayMemberBinding="{Binding Roles.role}" />
                     <GridViewColumn Width="auto">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Редактировать" Height="auto" Width="auto" Click="EditButton_Click"/>
+                                <Button Content="Редактировать" Height="auto" Width="100" Background="#FFDB8B" HorizontalAlignment="Center" VerticalAlignment="Center" Click="EditButton_Click"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
-        <StackPanel x:Name="Footer" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="700" Height="60" Margin="20">
-            <Button x:Name="AddUserButton" Width="160" Height="40" Margin="8,8" Content="Добавить пользователя" Click="AddUserButton_Click"/>
-            <Button x:Name="DeleteUserButton" Width="160" Height="40" Margin="8" Content="Удалить пользователя" Click="DeleteUserButton_Click"/>
-            <Button x:Name="BackButton" Width="160" Height="40" Margin="8" Content="Назад" Click="BackButton_Click"/>
+        <StackPanel x:Name="Footer" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="800" Height="80">
+            <Button x:Name="AddUserButton" Width="160" Height="40" Margin="50,0,20,0" Content="Добавить пользователя" Background="#FFDB8B" Click="AddUserButton_Click"/>
+            <Button x:Name="DeleteUserButton" Width="160" Height="40" Margin="0,0,20,0" Content="Удалить пользователя" Background="#FFDB8B" Click="DeleteUserButton_Click"/>
+            <Button x:Name="BackButton" Width="160" Height="40" Content="Назад" Background="#FFDB8B" Click="BackButton_Click"/>
         </StackPanel>
     </Grid>
 </Page>

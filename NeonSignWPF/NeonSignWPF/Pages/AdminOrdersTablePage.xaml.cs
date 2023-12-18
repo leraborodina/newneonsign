@@ -33,13 +33,19 @@ namespace NeonSignWPF.Pages
         private void DeleteOrder(object sender, RoutedEventArgs e)
         {
             var CurrentOrder = OrdersListView.SelectedItem as Orders;
-            if (MessageBox.Show("Вы действительно хотите удалить заказ?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (CurrentOrder == null)
             {
-               AppData.db.Orders.Remove(CurrentOrder);
-               AppData.db.SaveChanges();
-               OrdersListView.ItemsSource = AppData.db.Orders.ToList();
-               MessageBox.Show("Заказ успешно удален", "Успешно!", MessageBoxButton.OK);
+                MessageBox.Show("Выберите заказ для удаления", "Внимание!", MessageBoxButton.OK);
             }
+            else if (MessageBox.Show("Вы действительно хотите удалить заказ?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                AppData.db.Orders.Remove(CurrentOrder);
+                AppData.db.SaveChanges();
+                OrdersListView.ItemsSource = AppData.db.Orders.ToList();
+                MessageBox.Show("Заказ успешно удален", "Успешно!", MessageBoxButton.OK);
+                
+            }
+
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

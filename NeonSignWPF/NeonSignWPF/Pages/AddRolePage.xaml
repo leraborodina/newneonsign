@@ -5,17 +5,17 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:NeonSignWPF.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="380" d:DesignWidth="800"
       Title="AddRolePage">
 
-    <Grid>
-        <StackPanel Height="280" Width="700" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,90,0,0">
-            <TextBlock Margin="15" FontSize="35">Введите новую роль</TextBlock>
+    <Grid Height="380" Width="800">
+        <StackPanel Height="300" Width="700" VerticalAlignment="Top">
+            <TextBlock Margin="15" FontSize="30">Введите новую роль</TextBlock>
             <TextBox Text="{Binding role}" x:Name="TextRole" HorizontalAlignment="Left" Margin="15" Width="400" Height="45" FontSize="35" Foreground="Black"></TextBox>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="70" Width="700">
-            <Button x:Name="Conf_Button" Content="Сохранить роль" Margin="10" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Click="Conf_Button_Click"></Button>
-            <Button x:Name="BackButton" Content="Назад" Margin="10" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Click="BackButton_Click"></Button>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="80" Width="800">
+            <Button x:Name="Conf_Button" Background="#FFDB8B" Content="Сохранить роль" Margin="50,0" Height="40" Width="160" Click="Conf_Button_Click"></Button>
+            <Button x:Name="BackButton" Background="#FFDB8B" Content="Назад" Height="40" Width="160" Click="BackButton_Click"></Button>
         </StackPanel>
     </Grid>
 </Page>

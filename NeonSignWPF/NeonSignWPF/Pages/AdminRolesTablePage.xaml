@@ -5,11 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:NeonSignWPF.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="380" d:DesignWidth="800"
       Title="AdminRolesTablePage"  Loaded="PageLoaded">
 
-    <Grid>
-        <ListView x:Name="RolesListView" Height="250" Width="700" HorizontalAlignment="Center" Margin="30">
+    <Grid Width="800" Height="380">
+        <ListView x:Name="RolesListView" Height="300" Width="700" HorizontalAlignment="Center" VerticalAlignment="Top">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="id" Width="350"  DisplayMemberBinding="{Binding id_role}"/>
@@ -17,10 +17,10 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <StackPanel x:Name="Footer" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="700" Height="60" Margin="20">
-            <Button x:Name="AddUserButton" Width="160" Height="40" Margin="8,8" Content="Добавить роль" Click="AddRoleButton_Click"/>
-            <Button x:Name="DeleteUserButton" Width="160" Height="40" Margin="8" Content="Удалить роль" Click="DeleteRoleButton_Click"/>
-            <Button x:Name="BackButton" Width="160" Height="40" Margin="8" Content="Назад" Click="BackButton_Click"/>
+        <StackPanel x:Name="Footer" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="800" Height="80">
+            <Button x:Name="AddUserButton" Width="160" Height="40" Margin="50,0,20,0" Content="Добавить роль" Background="#FFDB8B" Click="AddRoleButton_Click"/>
+            <Button x:Name="DeleteUserButton" Width="160" Margin="0,0,20,0" Height="40" Content="Удалить роль" Background="#FFDB8B" Click="DeleteRoleButton_Click"/>
+            <Button x:Name="BackButton" Width="160" Height="40" Content="Назад" Background="#FFDB8B" Click="BackButton_Click"/>
         </StackPanel>
     </Grid>
 </Page>

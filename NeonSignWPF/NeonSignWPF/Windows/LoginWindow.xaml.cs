@@ -53,10 +53,5 @@ namespace NeonSignWPF.Windows
                 login_txt.Focus();    
             }        
         }
-
-        private void Loginpage_close_button_click(object sender, EventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
     }
 }

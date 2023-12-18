@@ -5,26 +5,26 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:NeonSignWPF.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="380" d:DesignWidth="800"
       Title="AdminMenuPage">
 
     <Grid>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="100"> 
-        </StackPanel>
-        <StackPanel x:Name="MainPanel" Width="700" Orientation="Horizontal" Height="350" VerticalAlignment="Bottom">
-            <Grid Width="700" Height="250" VerticalAlignment="Top">
+        <StackPanel x:Name="MainPanel" Width="800" Orientation="Horizontal" Height="380">
+            <Grid Width="800" Height="380" VerticalAlignment="Top">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="80" />
-                    <RowDefinition Height="80" />
-                    <RowDefinition Height="80" />
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="100" />
                 </Grid.RowDefinitions>
-                <Button x:Name="Orders" Grid.Row="0"  Width="250" Height="60"  Grid.Column="1" Content="Заказы" Click="Orders_Click"/>
-                <Button x:Name="Roles" Grid.Row="1"  Width="250" Height="60"  Grid.Column="1" Content="Роли" Click="Roles_Click"/>
-                <Button x:Name="Users" Grid.Row="2"  Width="250" Height="60"  Grid.Column="1" Content="пользователи" Click="Users_Click"/>
+                <TextBlock Text="Выберите таблицу для просмотра: " FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                <Button x:Name="Orders" Background="#FFDB8B" Grid.Row="1"  Width="250" Height="60"  Grid.Column="1" Content="Заказы" Click="Orders_Click"/>
+                <Button x:Name="Roles" Background="#FFDB8B" Grid.Row="2"  Width="250" Height="60"  Grid.Column="1" Content="Роли" Click="Roles_Click"/>
+                <Button x:Name="Users" Background="#FFDB8B" Grid.Row="3"  Width="250" Height="60"  Grid.Column="1" Content="пользователи" Click="Users_Click"/>
                 <!--<Button x:Name="SignForm" Grid.Row="2"  Width="100" Height="50"  Grid.Column="1" Content="форма вывески" HorizontalAlignment="Right" Click="SignForm_Click"/>-->
             </Grid>
         </StackPanel>

@@ -5,21 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NeonSignWPF.Windows"
         mc:Ignorable="d"
+        Icon="/Resources/no_image.jpg"
         WindowStartupLocation="CenterScreen"
+        Title="Неоновые вывески"
         Background="#EBF7F9"
-        Title="UserMenuWindow" MinHeight="600" MinWidth="800"
-        MaxHeight="600" MaxWidth="800"
-        >
-    <Grid>
-        <StackPanel Orientation="Vertical">
-            <StackPanel Height="60" x:Name="WelcomePanel">
-                <TextBlock FontSize="30" Margin="10" Text="Добро пожаловать, пользователь!"></TextBlock>
+        MinWidth="800" MaxWidth="800" Height="600">
+    <Grid Height="600" Width="800" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Height="100" Width="800" VerticalAlignment="Top">
+            <TextBlock Width="auto" FontSize="30" Margin="30" Text="Добро пожаловать, пользователь!"></TextBlock>
+        </StackPanel>
+        <StackPanel x:Name="MainPanel" Width="800" Orientation="Vertical" Height="500" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal" Width="800" Height="380">
+                <Frame x:Name="UserFrame" Width="800" NavigationUIVisibility="Hidden"/>
             </StackPanel>
-            <StackPanel x:Name="MainPanel" Height="420">
-                <Frame x:Name="UserFrame" NavigationUIVisibility="Hidden" Height="420" Width="800"/>
-            </StackPanel>
-            <StackPanel Height="80" HorizontalAlignment="Center" Width="800" Orientation="Horizontal">
-                <Button x:Name="LogOutButton" Width="160" Height="40" Background="#FFCDA7DB" FontFamily="OpenSans" FontWeight="Bold" FontSize="15" Foreground="white" BorderThickness="0" Margin="20,0,0,0" Content="Выйти" VerticalAlignment="Center" HorizontalAlignment="Left" Click="LogOut_btn_Click"/>
+            <StackPanel Width="800" Height="120">
+                <Button x:Name="LogOutButton" Background="#FFDB8B" Width="100" Height="30" HorizontalAlignment="Right" Margin="0,50,50,0" Content="Выйти" Click="LogOut_btn_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

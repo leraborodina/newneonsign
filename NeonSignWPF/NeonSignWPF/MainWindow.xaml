@@ -5,20 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NeonSignWPF"
         mc:Ignorable="d"
+        Icon="/Resources/no_image.jpg"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="600" Width="800"
-        Background="#EBF7F9">
-    <Grid>
-        <StackPanel Height="100" VerticalAlignment="Top">
+        Title="Неоновые вывески Админ-панель"
+        Background="#EBF7F9"
+        MinWidth="800" MaxWidth="800" Height="600">
+    
+    <Grid Height="600" Width="800" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Height="100" Width="800" VerticalAlignment="Top">
             <TextBlock Width="auto" FontSize="30" Margin="30" Text="Добро пожаловать, админ!"></TextBlock>
         </StackPanel>
-        <StackPanel x:Name="MainPanel" Width="700" Height="480" VerticalAlignment="Bottom" Margin="50,105,50,0">
-            <StackPanel Orientation="Horizontal" Width="700" Height="380"/>
-            <StackPanel VerticalAlignment="Bottom" Orientation="Vertical" Width="700" Height="100">
-                <Button x:Name="LogOutButton" Width="200" Height="40" Margin="30" Content="Выйти" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="LogOut_btn_Click"/>
+        <StackPanel x:Name="MainPanel" Width="800" Orientation="Vertical" Height="500" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal" Width="800" Height="380">
+                <Frame x:Name="AdminFrame" Width="800" Navigated="AdminFrame_Navigated" NavigationUIVisibility="Hidden"/>
+            </StackPanel>
+            <StackPanel Width="800" Height="120">
+                <Button x:Name="LogOutButton" Background="#FFDB8B" Width="100" Height="30" HorizontalAlignment="Right" Margin="0,50,50,0" Content="Выйти" Click="LogOut_btn_Click"/>
             </StackPanel>
         </StackPanel>
-        <Frame x:Name="AdminFrame" Width="800" Navigated="AdminFrame_Navigated" Margin="0,0,0,99"/>
     </Grid>
 </Window>
    
