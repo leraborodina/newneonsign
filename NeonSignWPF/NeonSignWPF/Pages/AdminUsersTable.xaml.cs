@@ -41,9 +41,13 @@ namespace NeonSignWPF.Pages
         }
         private void DeleteUserButton_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Вы действительно хотите удалить пользователя?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            var CurrentUser = UsersListView.SelectedItem as Users;
+            if(CurrentUser == null)
             {
-                var CurrentUser = UsersListView.SelectedItem as Users;
+                MessageBox.Show("Выберите пользователя для удаления", "Внимание!", MessageBoxButton.OK);
+            }
+            else if (MessageBox.Show("Вы действительно хотите удалить пользователя?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {   
                 bool hasRelatedRecords = CheckForRelatedRecords(CurrentUser);
                 if (hasRelatedRecords)
                 {

@@ -30,12 +30,12 @@ namespace NeonSignWPF.Windows
             var CurrentUserAdmin = AppData.db.Users.FirstOrDefault(u => u.login == login_txt.Text && u.password == password_txt.Password && u.id_role == 1);
             var CurrentUser = AppData.db.Users.FirstOrDefault(u => u.login == login_txt.Text && u.password == password_txt.Password && u.id_role == 2);
 
-            if(CurrentUserAdmin != null)//если админ - главное окно со страницей 
+            if(CurrentUserAdmin != null)
             {
                 MainWindow main = new MainWindow();
                 main.Show();
                 this.Close();
-            } else if (CurrentUser != null)//если пользователь - окно меню со страницей пользователя
+            } else if (CurrentUser != null)
             {
                 int userId = CurrentUser.id_user;
                 App.IdUser = userId;

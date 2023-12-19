@@ -45,7 +45,6 @@ namespace NeonSignWPF.Pages
                 MessageBox.Show("Заказ успешно удален", "Успешно!", MessageBoxButton.OK);
                 
             }
-
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

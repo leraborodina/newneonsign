@@ -24,9 +24,9 @@
                 <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" FontSize="30">Введите логин</TextBlock>
                 <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" FontSize="30">Введите пароль</TextBlock>
                 <TextBlock VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" FontSize="30">Выберите роль</TextBlock>
-                <TextBox Text="{Binding login}" Grid.Row="0" Grid.Column="1" x:Name="TextLogin" Height="35" FontSize="30" Width="250" Foreground="Black"></TextBox>
-                <PasswordBox x:Name="TextPassword" Grid.Row="1" Grid.Column="1" Height="35" FontSize="30" Width="250" PasswordChar="*"></PasswordBox>
-                <ComboBox SelectedItem="{Binding Roles}" Grid.Row="2" Grid.Column="1" x:Name="SelectRoleComboBox" FontSize="30" DisplayMemberPath="role" Width="250" Height="35"></ComboBox>
+                <TextBox Text="{Binding login}" Grid.Row="0" Grid.Column="1" x:Name="TextLogin" Height="35" FontSize="20" Width="250" Foreground="Black"></TextBox>
+                <PasswordBox x:Name="TextPassword" Grid.Row="1" Grid.Column="1" Height="35" FontSize="20" Width="250" PasswordChar="*"></PasswordBox>
+                <ComboBox SelectedItem="{Binding Roles}" Grid.Row="2" Grid.Column="1" x:Name="SelectRoleComboBox" FontSize="20" DisplayMemberPath="role" Width="250" Height="35"></ComboBox>
             </Grid>
         </StackPanel>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Height="80" Width="800">

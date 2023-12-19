@@ -17,7 +17,7 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Width="296" Margin="0, 0, 40, 0" Orientation="Vertical">
-                <Image x:Name="Image_photo" Width="150" Height="150" Margin="10"/>
+                <Image x:Name="Image_photo" Width="150" Height="150" Margin="10" Source="{Binding SignForm.form_img, TargetNullValue='~/Resources/no_image.jpg'}"/>
                 <Button x:Name="SelectPlacePhoto" BorderThickness="0" Height="30" Width="150" Content="Выбрать фото" FontSize="15" FontFamily="OpenSans" FontWeight="Bold" Foreground="#6B7F83" Background="#D4E2E4" Click="SelectImage"/>
                 <Button x:Name="ConfButton" BorderThickness="0" Height="30" Width="150" Content="Добавить" FontSize="15" FontFamily="OpenSans" FontWeight="Bold" Foreground="#6B7F83" Background="#D4E2E4" Click="ConfButton_Click" Margin="5"/>
                 <Button x:Name="back_button" Height="30" Width="150" FontFamily="OpenSans" FontSize="15" FontWeight="Bold" VerticalAlignment="Top" Content="Назад" Background="#D4E2E4" Foreground="#6B7F83" Click="Back_button" BorderThickness="0"/>

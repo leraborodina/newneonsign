@@ -9,10 +9,10 @@ WindowStartupLocation="CenterScreen" Icon="/Resources/no_image.jpg"
         Height="734" Width="516" Background="#BCBCBC"  MinWidth="516" MinHeight="734" MaxWidth="516" MaxHeight="734">
     <Grid Height="734" Width="516">
         <Label x:Name="signin_label" Margin="116,107,124,563" Content="Авторизация" FontFamily="Open Sans" FontSize="40" FontWeight="Bold" Foreground="#FFDB8B"></Label>
-        <Label x:Name="login_label" Content="Логин" HorizontalAlignment="Left" FontSize="24" Margin="46,217,0,0" FontFamily="Open Sans" Foreground="white" RenderTransformOrigin="0.508,1.525" Height="38" VerticalAlignment="Top" Width="89"/>
+        <Label x:Name="login_label" Content="Логин" HorizontalAlignment="Left" FontSize="24" Margin="46,217,0,0" FontFamily="Open Sans" Foreground="#FFDB8B" RenderTransformOrigin="0.508,1.525" Height="38" VerticalAlignment="Top" Width="89"/>
         <TextBox x:Name="login_txt" Foreground="#303030" Height="53" Width="424" BorderThickness="0" Margin="46,260,46,421" FontSize="24" FontFamily="open sans" Padding="15px"/>
-        <Label x:Name="password_label" Content="Пароль" HorizontalAlignment="Left" FontSize="24" Margin="46,367,0,0" FontFamily="Open Sans" Foreground="white" RenderTransformOrigin="0.508,1.525" Height="38" VerticalAlignment="Top"  Width="99"/>
+        <Label x:Name="password_label" Content="Пароль" HorizontalAlignment="Left" FontSize="24" Margin="46,367,0,0" FontFamily="Open Sans" Foreground="#FFDB8B" RenderTransformOrigin="0.508,1.525" Height="38" VerticalAlignment="Top"  Width="99"/>
         <PasswordBox x:Name="password_txt" Foreground="#303030" PasswordChar="*" Height="53" Width="424" BorderThickness="0" Margin="46,405,46,276" FontSize="24" Padding="15px"/>
-        <Button x:Name="login_button" Content="Вход" Height="50" Background="#FFDB8B"  FontWeight="Bold" FontSize="24" Foreground="white" BorderThickness="0" Margin="38,571,46,113" Click="login_button_Click"/>
+        <Button x:Name="login_button" Content="Вход" Height="50" Background="#FFDB8B" Foreground="#BCBCBC" FontWeight="Bold" FontSize="24" BorderThickness="0" Margin="38,571,46,113" Click="login_button_Click"/>
     </Grid>
 </Window>

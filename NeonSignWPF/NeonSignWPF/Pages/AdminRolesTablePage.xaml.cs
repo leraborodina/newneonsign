@@ -38,9 +38,12 @@ namespace NeonSignWPF.Pages
 
         private void DeleteRoleButton_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Вы действительно хотите удалить роль?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            var CurrentRole = RolesListView.SelectedItem as Roles;
+            if(CurrentRole == null)
             {
-                var CurrentRole = RolesListView.SelectedItem as Roles;
+                MessageBox.Show("Выберите роль для удаления", "Внимание!", MessageBoxButton.OK);
+            } else if (MessageBox.Show("Вы действительно хотите удалить роль?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
                 bool hasRelatedRecords = CheckForRelatedRecords(CurrentRole);
                 if (hasRelatedRecords)
                 {

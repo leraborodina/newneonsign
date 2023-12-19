@@ -30,7 +30,6 @@ namespace NeonSignWPF.Pages
 
         private void UpdateOrders()
         {
-            // Получаем заказы для текущего пользователя
             int userId = App.IdUser;
             var currentOrders = AppData.db.Orders.Where(o => o.id_user == userId).ToList();
 

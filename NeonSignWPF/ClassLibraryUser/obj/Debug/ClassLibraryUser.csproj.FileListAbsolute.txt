@@ -1,0 +1,6 @@
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\ClassLibraryUser\bin\Debug\ClassLibraryUser.dll
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\ClassLibraryUser\bin\Debug\ClassLibraryUser.pdb
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\ClassLibraryUser\obj\Debug\ClassLibraryUser.csproj.AssemblyReference.cache
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\ClassLibraryUser\obj\Debug\ClassLibraryUser.csproj.CoreCompileInputs.cache
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\ClassLibraryUser\obj\Debug\ClassLibraryUser.dll
+C:\Users\valer\Desktop\neonsign\NeonSignWPF\ClassLibraryUser\obj\Debug\ClassLibraryUser.pdb
